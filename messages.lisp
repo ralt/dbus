@@ -84,7 +84,8 @@
    (destination :initarg :destination :reader message-destination)
    (sender :initarg :sender :reader message-sender)
    (signature :initarg :signature :reader message-signature)
-   (body :initarg :body :reader message-body)))
+   (body :initarg :body :reader message-body)
+   (unix-fds :initarg :unix-fds :reader message-unix-fds)))
 
 (defclass method-call-message (standard-message)
   ((path :initarg :path :reader message-path)
@@ -152,6 +153,7 @@ operator, the stream has to be a bivalent stream."
                                        :destination destination
                                        :sender sender
                                        :signature signature
+                                       :unix-fds unix-fds
                                        :body body
                                        ,@additional-initargs)))
             (case type-code

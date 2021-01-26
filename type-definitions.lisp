@@ -126,6 +126,9 @@
   :unpack (unpack-seq stream endianness element-types)
   :checker #'valid-dict-entry-p)
 
+(cffi:defcfun ("receive_fds" receive-fds) :int
+  (socket :int))
+
 (define-dbus-type :unix-fd
   :signature #\h
   :alignment 4

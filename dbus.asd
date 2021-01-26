@@ -14,5 +14,7 @@
   :author "death <github.com/death>"
   :license "BSD"
   :class :package-inferred-system
-  :defsystem-depends-on ("asdf-package-system")
-  :depends-on ("dbus/all"))
+  :defsystem-depends-on ("asdf-package-system" "cffi-grovel")
+  :depends-on ("dbus/all")
+  :components ((:module "socket" :components ((:file "package")
+                                              (:c-file "socket")))))
